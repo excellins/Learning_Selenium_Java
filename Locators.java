@@ -34,6 +34,10 @@ public class Locators {
 		//below show error because fo time out so we use implicit wait
 		
 		//implicitwait
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		
+		
+		
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5)); 
 		System.out.println(driver.findElement(By.cssSelector("p.error")).getText());
 		//NOTICE ALL OUR LOCATORS USED>? ONE ON ONE MAPPGIN
@@ -51,6 +55,7 @@ public class Locators {
 		//checking of your xpath or css is fine from console dev tools
 		//xpath use $x(.//*[@placeholder="Name"])
 		//css use $('p.error') 
+		//driver.findElement(By.xpath(""));
 		driver.findElement(By.xpath(".//*[@placeholder='Name']")).sendKeys("Collins Abang Eban");
 		driver.findElement(By.cssSelector("input[placeholder='Email']")).sendKeys("excellins@gmail.com");
 		//driver.findElement(By.cssSelector("input[placeholder='Email']")).clear();//using another locator to get it
