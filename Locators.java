@@ -8,7 +8,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 
 public class Locators {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		// TODO Auto-generated method stub
 		
 		ChromeOptions ops = new ChromeOptions();
@@ -80,12 +80,37 @@ public class Locators {
 		//forinstace some elements with no atributes "FORM NAME"
 		driver.findElement(By.xpath("//form/input[3]")).sendKeys("0803302222");
 		//parentTagname/childTagname\
+		
+		//Thread.sleep(1000);most times requires try catch. know why? sleep throws InterruptedException
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		Thread.sleep(10);
 		driver.findElement(By.className("reset-pwd-btn")).click();
+		
+		
 		//driver.findElement(By.className("infoMsg"));//this works
 		System.out.println(driver.findElement(By.cssSelector("form p")).getText());//notice xpath we did this //form/input[3]
+		driver.findElement(By.xpath("//div[@class='forgot-pwd-btn-conainer']/button[1]")).click();
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(50));
+		Thread.sleep(10);
+		
 		
 		//for css we can just do this form p
 		//for css>> Parenttagname childtagname no slashes
+		Thread.sleep(1000);
+		driver.findElement(By.cssSelector("#inputUsername")).sendKeys("rahul");
+		driver.findElement(By.cssSelector("input[type*='pass']")).sendKeys("rahulshettyacademy");//regular exression css (the * makes it regex)
+		//from above ususally input is password but using regular expression we can just extract pass as seen above input[type*="pass"])
+		//this is useful especial when dealing with dynamic content and some parts of the words changes everytime eg from password to passwlow
+		
+		//NOW SELECT CHECK BOX
+		driver.findElement(By.id("chkboxOne")).click();
+		//driver.findElement(By.xpath("//input[@id=\"chkboxTwo\"]")).click();
+		
+		//driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(60));
+		Thread.sleep(10);
+		driver.findElement(By.xpath("//button[contains(@class,'submit')]")).click();//regext xpath
+		
 	}
+	
 
 }
