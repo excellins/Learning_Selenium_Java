@@ -27,6 +27,10 @@ public class AutoSeuggestiveDropDowns {
 		
 		List<WebElement> options = driver.findElements(By.cssSelector("li[class='ui-menu-item'] a"));
 		
+		//below enhanced loop explained
+		//in options (Not options have a number of elements), get me one option eahc time,
+		//everytime loop iterates, you pick one options, and that options is store in the variable option
+		//and the return type is a list of webelement
 		for(WebElement option :options)//anytime loop iterate we pick an option
 		{
 			if(option.getText().equalsIgnoreCase("India"))
