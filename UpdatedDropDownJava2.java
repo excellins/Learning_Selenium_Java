@@ -23,7 +23,7 @@ public class UpdatedDropDownJava2 {
 		driver.findElement(By.xpath("//a[@value='BLR']")).click();
 		Thread.sleep(2000);
 		
-		
+		 
 		//.ui-state-default ui-state-highlight ui-state-active
 		//notice the above class with spaces? in this scenario remove the spaces and use . like below
 		//.ui-state-default.ui-state-highlight.ui-state-active
