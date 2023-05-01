@@ -90,7 +90,7 @@ public class ComplexCalculationsBaseJava {
 					
 					
 					//IT IS DANGEROUS TO REPLY ON TEXT FOR LOCATORS, TEXT CAN CHANGE AT ANYTIME, NOTICE ADD TO CART, CHANGES TO ADDED
-					if(checkTimesEntered == o)//but instead of giving the number, what if 4 items are added?
+					//if(checkTimesEntered == o)//but instead of giving the number, what if 4 items are added?
 					//it breaks so it is better we ise size of array like below
 					if(checkTimesEntered == itemsNeeded.length)
 					break;
