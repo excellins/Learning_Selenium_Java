@@ -37,7 +37,17 @@ public class Section9_Base {
 		driver.findElement(By.xpath("//button[contains(text(), 'PROCEED TO CHECKOUT')]")).click();
 		driver.findElement(By.cssSelector("input.promoCode")).sendKeys("collinsAcademy");
 		//remember css you can simply say tagename . className eg input.promoCode
+		driver.findElement(By.cssSelector("button.promoBtn")).click();
+		//driver.findElement(By.cssSelector("span.promoInfo")).getText();//TO GET THE TEXT
+		System.out.println(driver.findElement(By.cssSelector("span.promoInfo")).getText());
+		//NOTE, TEXT IS ONLY VISIBLE AFTER YOU CLICK ON "APPLY", BUT BECAUSE WE ALREADY SPECIFY
+		//>>IMPLICIT WAIT IT WAITS FOR SOME SECODS (5) EVEN WHEN ELEMENT ISNT VISIBLE 
+		//SO WE SOLVE THE SNC ISSUE WITH IMPLICIT WAIT DECLARATION
+		//>>>>>>>>>>>IMPLICIT WAIT PROS<<<<<<<<<<<<<<<<<<<<<<\\
+		//-- CODE IS OPTIMIZED AND MORE READABLE, YOU DECLARE IT ONCE
 		
+		//>>>>>>>>>>>IMPLICIT WAIT CONS<<<<<<<<<<<<<<<<<<<<<<\\
+		//-- SOMETIMES HIDES PERFORMANCE ISSUES, ESPECIALLY WITH LOAD TIME
 	}
 
 	// WANT TO WRITE REUSABLE METHODS? WRITE IT OUTSIDE OF PUBLIC STATIC VOID MAIN method

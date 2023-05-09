@@ -53,7 +53,7 @@ public class Locators {
 		//xpath and csss are generic locators
 		//input[@name='UserName']
 		//checking of your xpath or css is fine from console dev tools
-		//xpath use $x(.//*[@placeholder="Name"])
+		//xpath use $x(".//*[@placeholder='Name']")
 		//css use $('p.error') 
 		//driver.findElement(By.xpath(""));
 		driver.findElement(By.xpath(".//*[@placeholder='Name']")).sendKeys("Collins Abang Eban");
